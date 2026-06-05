@@ -85,3 +85,5 @@ git push -u origin main
 - The app is built to work well on mobile and desktop.
 - Blog pages include SEO-friendly headings, metadata, and internal links.
 - Avoid committing secrets or local environment files.
+
+## Thanks!
