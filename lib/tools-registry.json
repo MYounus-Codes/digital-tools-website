@@ -1,0 +1,124 @@
+{
+  "tools": [
+    {
+      "slug": "tdee-calculator",
+      "category": "Calculators",
+      "categorySlug": "calculators",
+      "title": "TDEE Calculator",
+      "shortTitle": "TDEE",
+      "description": "Calculate your Total Daily Energy Expenditure (TDEE) with macros.",
+      "longDescription": "Calculate maintenance calories and suggested macros using the Mifflin-St Jeor equation. Adjust activity level and goals to plan nutrition.",
+      "icon": "🧮",
+      "primaryKeyword": "TDEE calculator free",
+      "secondaryKeywords": ["tdee calculator", "calorie calculator"],
+      "lsIKeywords": [],
+      "faqs": [
+        { "q": "What is TDEE?", "a": "TDEE is Total Daily Energy Expenditure." },
+        { "q": "Does this tool store my personal data?", "a": "No — it runs entirely in your browser." },
+        { "q": "How accurate is this calculator?", "a": "It uses Mifflin-St Jeor and gives an estimate within ±10% for most users." },
+        { "q": "Can I change activity levels?", "a": "Yes — choose an activity multiplier to adjust your TDEE." }
+      ],
+      "howToSteps": [
+        { "name": "Step 1", "text": "Enter your age, weight, and height." },
+        { "name": "Step 2", "text": "Select activity level and goal." },
+        { "name": "Step 3", "text": "Read the recommended calories and macros." }
+      ]
+    },
+    {
+      "slug": "bmi-calculator",
+      "category": "Calculators",
+      "categorySlug": "calculators",
+      "title": "BMI Calculator",
+      "shortTitle": "BMI",
+      "description": "Calculate BMI from height and weight and see category.",
+      "longDescription": "A quick BMI checker with category labels and healthy range guidance.",
+      "icon": "⚖️",
+      "primaryKeyword": "BMI calculator online",
+      "secondaryKeywords": ["bmi calculator", "body mass index"],
+      "lsIKeywords": [],
+      "faqs": [
+        { "q": "What is BMI?", "a": "BMI (Body Mass Index) is a measure calculated from height and weight that categorizes underweight, normal, overweight, and obesity." },
+        { "q": "Is BMI accurate for everyone?", "a": "BMI is a general screening tool and may not account for muscle mass or body composition differences." },
+        { "q": "What units are supported?", "a": "This calculator supports metric inputs (kg and cm)." },
+        { "q": "Does this tool store my data?", "a": "No. All calculations run locally in your browser; no data is uploaded." }
+      ],
+      "howToSteps": [
+        { "name": "Step 1", "text": "Enter your weight in kilograms." },
+        { "name": "Step 2", "text": "Enter your height in centimeters." },
+        { "name": "Step 3", "text": "Read the BMI value and category provided." }
+      ]
+    },
+    {
+      "slug": "json-to-csv",
+      "category": "Developer Tools",
+      "categorySlug": "developer-tools",
+      "title": "JSON to CSV Converter",
+      "shortTitle": "JSON→CSV",
+      "description": "Convert JSON arrays to CSV for spreadsheets.",
+      "longDescription": "Convert flat JSON arrays into CSV files with automatic header extraction and download support. Supports dot-notation flattening.",
+      "icon": "🗃️",
+      "primaryKeyword": "JSON to CSV converter online",
+      "secondaryKeywords": ["json to csv converter", "convert json to csv"],
+      "lsIKeywords": [],
+      "faqs": [
+        { "q": "Is my data uploaded?", "a": "No — conversion runs completely in your browser." },
+        { "q": "What JSON structures are supported?", "a": "Flat arrays of objects are supported; nested objects are flattened." },
+        { "q": "Can I download the CSV?", "a": "Yes — use the Download CSV button after conversion." },
+        { "q": "How large of files can I convert?", "a": "This is client-side and handles moderate file sizes; very large files may be slow." }
+      ],
+      "howToSteps": [
+        { "name": "Step 1", "text": "Paste or upload a JSON array." },
+        { "name": "Step 2", "text": "Preview the generated CSV columns." },
+        { "name": "Step 3", "text": "Download the CSV file." }
+      ]
+    },
+    {
+      "slug": "json-formatter",
+      "category": "Developer Tools",
+      "categorySlug": "developer-tools",
+      "title": "JSON Formatter & Validator",
+      "shortTitle": "JSON Format",
+      "description": "Beautify, minify and validate JSON with error highlighting.",
+      "longDescription": "Paste JSON to beautify, minify, and validate. Errors are highlighted with helpful messages.",
+      "icon": "🔧",
+      "primaryKeyword": "JSON formatter online",
+      "secondaryKeywords": ["json formatter", "json validator"],
+      "lsIKeywords": [],
+      "faqs": [
+        { "q": "What formats are supported?", "a": "This tool accepts JSON text; it can beautify, minify, and validate structure." },
+        { "q": "Does it upload my JSON?", "a": "No. Parsing and formatting happen in your browser only." },
+        { "q": "Can I fix errors?", "a": "Yes — errors are shown with messages to help you correct malformed JSON." },
+        { "q": "Can I copy the formatted JSON?", "a": "Yes — use your browser copy or the provided copy button." }
+      ],
+      "howToSteps": [
+        { "name": "Step 1", "text": "Paste or type your JSON into the editor." },
+        { "name": "Step 2", "text": "Click Beautify to format or Minify to compact." },
+        { "name": "Step 3", "text": "Copy or download the result as needed." }
+      ]
+    },
+    {
+      "slug": "image-compressor",
+      "category": "Image Tools",
+      "categorySlug": "image-tools",
+      "title": "Image Compressor",
+      "shortTitle": "Compress",
+      "description": "Compress images client-side with quality slider and download.",
+      "longDescription": "Drag & drop images and compress to a target size or quality level using browser-image-compression entirely in your browser.",
+      "icon": "🖼️",
+      "primaryKeyword": "compress image online free",
+      "secondaryKeywords": ["image compressor", "compress image"],
+      "lsIKeywords": [],
+      "faqs": [
+        { "q": "Does compressing an image reduce its quality?", "a": "Lossy compression reduces quality slightly, but at 70–85% quality settings differences are usually invisible." },
+        { "q": "Will my images be uploaded to a server?", "a": "Never. Your images are processed entirely in your browser." },
+        { "q": "What file types are supported?", "a": "Common image types like JPEG, PNG and WebP are supported." },
+        { "q": "Can I preview the result?", "a": "Yes — the tool shows side-by-side preview of original and compressed images." }
+      ],
+      "howToSteps": [
+        { "name": "Step 1", "text": "Drop an image or select from disk." },
+        { "name": "Step 2", "text": "Adjust quality and preview compressed output." },
+        { "name": "Step 3", "text": "Download the compressed image." }
+      ]
+    }
+  ]
+}
