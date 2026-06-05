@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { tools } from '../lib/tools-registry'
 import { homeFaqs } from '../lib/faqs'
 import { featuredBlog, blogPosts } from '../lib/blogs'
-
+<meta name="google-site-verification" content="qoR9ANmVflZd8lW-BUSGvLSn3BcChlfKd3w1-IeIt0o" />
 export default function HomePage() {
   const categoryEntries = Array.from(
     tools.reduce((map, tool) => {
