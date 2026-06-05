@@ -1,7 +1,7 @@
 import '../styles/globals.css'
 import Link from 'next/link'
 import SiteHeader from '../components/SiteHeader'
-import { Manrope, Cormorant_Garamond } from 'next/font/google'
+import { Manrope } from 'next/font/google'
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
@@ -17,15 +17,9 @@ const manrope = Manrope({
   variable: '--font-manrope'
 })
 
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-cormorant'
-})
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${manrope.variable} ${cormorant.variable}`}>
+    <html lang="en" className={`${manrope.variable}`}>
       <head />
       <body>
         <div className="min-h-screen text-[var(--text-primary)]">

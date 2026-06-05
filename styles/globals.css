@@ -4,7 +4,7 @@
 
 :root {
   --font-body: var(--font-manrope), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-display: var(--font-manrope), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --brand-primary: #2563eb;
   --brand-primary-hover: #1d4ed8;
@@ -49,6 +49,7 @@ body {
     linear-gradient(180deg, #f7faff 0%, #eef4ff 100%);
   color: var(--text-primary);
   font-family: var(--font-body);
+  font-weight: 700;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
