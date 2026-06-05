@@ -6,7 +6,10 @@ import { Manrope, Cormorant_Garamond } from 'next/font/google'
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: 'ToolNest — Free Online Tools',
-  description: '50+ free browser-based tools — 100% client-side, no signup.'
+  description: '50+ free browser-based tools — 100% client-side, no signup.',
+  verification: {
+    google: 'qoR9ANmVflZd8lW-BUSGvLSn3BcChlfKd3w1-IeIt0o',
+  },
 }
 
 const manrope = Manrope({
