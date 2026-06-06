@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    const accessKey = process.env.WEB3FORMS_KEY
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY
     if (!accessKey) {
       return NextResponse.json(
         { error: 'Form service is not configured.' },
