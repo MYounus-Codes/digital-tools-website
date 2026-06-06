@@ -26,7 +26,7 @@ export default function ImageResizer() {
       <input type="file" accept="image/*" onChange={(e) => setFile(e.target.files?.[0] ?? null)} />
       <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
         <input type="number" value={width} onChange={(e) => setWidth(Number(e.target.value))} className="p-2 border rounded" />
-        <button onClick={resize} className="px-4 py-2 bg-[var(--brand-primary)] text-white rounded">Resize</button>
+        <button onClick={resize} className="px-4 py-2 bg-[var(--brand-primary)] text-black rounded">Resize</button>
       </div>
       {output && <img src={output} alt="resized" className="mt-4 max-w-full border rounded" />}
     </div>

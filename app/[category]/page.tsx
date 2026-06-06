@@ -41,7 +41,20 @@ export default function CategoryPage({ params }: { params: { category: string } 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {items.map((t) => (
             <Link key={t.slug} href={`/${t.categorySlug}/${t.slug}`} className="site-card group p-5">
-              <div className="text-3xl">{t.icon}</div>
+              <div className="flex items-start justify-between gap-3">
+                <div className="text-3xl">{t.icon}</div>
+                <div className="flex gap-1.5 shrink-0">
+                  {t.isHot && (
+                    <span className="rounded-full bg-gradient-to-r from-red-500 to-orange-400 px-2.5 py-0.5 text-[9px] font-extrabold uppercase tracking-[0.2em] text-white shadow-[0_2px_8px_rgba(239,68,68,0.3)]">Hot</span>
+                  )}
+                  {t.isPopular && (
+                    <span className="rounded-full bg-[rgba(217,242,90,0.28)] px-2.5 py-0.5 text-[9px] font-extrabold uppercase tracking-[0.2em] text-[var(--text-primary)]">Popular</span>
+                  )}
+                  {(t.isFree !== false) && (
+                    <span className="rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-[9px] font-extrabold uppercase tracking-[0.2em] text-emerald-600">Free</span>
+                  )}
+                </div>
+              </div>
               <h2 className="mt-3 text-2xl font-semibold text-[var(--text-primary)] group-hover:text-[var(--brand-primary)]">{t.title}</h2>
               <p className="mt-3 text-sm leading-7 text-[var(--text-muted)]">{t.description}</p>
               <div className="mt-5 inline-flex items-center rounded-full border border-[var(--border)] bg-white/70 px-4 py-2 text-sm font-semibold text-[var(--text-primary)]">Open tool</div>

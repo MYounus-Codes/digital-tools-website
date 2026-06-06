@@ -22,7 +22,7 @@ export default function ImageCropper() {
   return (
     <div>
       <input type="file" accept="image/*" onChange={(e) => setFile(e.target.files?.[0] ?? null)} />
-      <button onClick={crop} className="ml-2 px-4 py-2 bg-[var(--brand-primary)] text-white rounded">Crop center square</button>
+      <button onClick={crop} className="ml-2 px-4 py-2 bg-[var(--brand-primary)] text-black rounded">Crop center square</button>
       {output && <img src={output} alt="cropped" className="mt-4 max-w-full border rounded" />}
     </div>
   )

@@ -15,6 +15,8 @@ export interface Tool {
   relatedTools: string[]
   isPopular?: boolean
   isNew?: boolean
+  isHot?: boolean
+  isFree?: boolean
   adSlots: {
     top: boolean
     sidebar: boolean
@@ -41,6 +43,27 @@ function makeHowTo() {
 }
 
 export const tools: Tool[] = [
+  // Image Tools
+  { slug: 'background-remover', category: 'Image Tools', categorySlug: 'image-tools', title: 'Background Remover', shortTitle: 'Remove BG',
+    description: 'Remove image backgrounds instantly using AI — 100% free, no signup, no upload to our servers.',
+    longDescription: 'Upload any image and remove its background with a single click. Powered by Remove.bg AI. No data is stored on our servers.',
+    icon: '✂️', primaryKeyword: 'remove background from image free', secondaryKeywords: ['background remover','remove bg','image background remover'], lsiKeywords: [],
+    faqs: [
+      { q: 'How do I remove the background from an image for free?', a: 'Upload your image to our Background Remover tool and click "Remove Background". The AI processes it instantly in your browser — no signup, no cost, and your image never leaves your device.' },
+      { q: 'Is the AI background remover really free to use?', a: 'Yes, it is 100% free with no hidden charges, no credit card required, and no usage limits. You can remove backgrounds from as many images as you like.' },
+      { q: 'What image formats are supported for background removal?', a: 'The tool accepts all common image formats including JPG, JPEG, PNG, WebP, GIF, and BMP. The output is a PNG image with a transparent background.' },
+      { q: 'Are my images uploaded to any server when I remove the background?', a: 'No. The entire background removal process runs locally in your browser. Your images are never uploaded, stored, or processed on any external server — your privacy is guaranteed.' },
+      { q: 'How accurate is the AI background removal?', a: 'The AI is highly accurate for most subjects including people, products, animals, and objects. It can handle complex edges like hair, fur, and intricate shapes with impressive precision.' },
+      { q: 'Can I remove the background from a photo with a white background?', a: 'Yes, the AI works on any background color or pattern, including solid white, gradient backgrounds, outdoor scenes, or busy indoor settings.' },
+      { q: 'Does the background remover work on mobile phones?', a: 'Yes, the tool is fully responsive and works on all mobile devices, tablets, and desktops. You can upload images directly from your phone\'s camera roll.' },
+      { q: 'What can I use the transparent background image for?', a: 'Transparent PNG images are perfect for e-commerce product photos, profile pictures, logo design, graphic design projects, social media content, and presentations.' },
+      { q: 'How is this background remover different from Photoshop?', a: 'Unlike Photoshop which requires design skills and manual selection tools, our AI background remover does the job in one click — no learning curve, no installation, and completely free.' },
+      { q: 'Can I download the background-removed image in high resolution?', a: 'Yes, the output preserves the original image resolution and quality. You download a full-resolution PNG with the background removed.' }
+    ], howToSteps: makeHowTo(), relatedTools: ['image-compressor','image-resizer','image-to-base64'],
+    isPopular: true, isNew: true, isHot: true, isFree: true,
+    adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
+  },
+
   // Calculators & Finance
   {
     slug: 'tdee-calculator', category: 'Calculators', categorySlug: 'calculators', title: 'TDEE Calculator', shortTitle: 'TDEE',
@@ -178,32 +201,32 @@ export const tools: Tool[] = [
   // Image Tools
   { slug: 'image-compressor', category: 'Image Tools', categorySlug: 'image-tools', title: 'Image Compressor', shortTitle: 'Compress',
     description: 'Compress images client-side with quality slider and download.', longDescription: 'Drag & drop images and compress locally with adjustable quality.', icon: '🖼️', primaryKeyword: 'compress image online free', secondaryKeywords: ['image compressor','compress image'], lsiKeywords: [],
-    faqs: makeFaqs('compress image online free', 'Image Compressor'), howToSteps: makeHowTo(), relatedTools: ['image-resizer','image-to-base64'], isPopular: true, isNew: false,
+    faqs: makeFaqs('compress image online free', 'Image Compressor'), howToSteps: makeHowTo(), relatedTools: ['image-resizer','image-to-base64'], isPopular: true, isNew: false, isHot: true,
     adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
   },
   { slug: 'image-resizer', category: 'Image Tools', categorySlug: 'image-tools', title: 'Image Resizer', shortTitle: 'Resize',
     description: 'Resize images by pixels or percentage with aspect lock.', longDescription: 'Client-side resizing with aspect ratio options and batch support.', icon: '📏', primaryKeyword: 'resize image online free', secondaryKeywords: ['image resizer'], lsiKeywords: [],
-    faqs: makeFaqs('resize image online free', 'Image Resizer'), howToSteps: makeHowTo(), relatedTools: ['image-compressor','image-cropper'], isPopular: false, isNew: false,
+    faqs: makeFaqs('resize image online free', 'Image Resizer'), howToSteps: makeHowTo(), relatedTools: ['image-compressor','image-cropper'], isPopular: true, isNew: false, isHot: true,
     adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
   },
   { slug: 'image-to-base64', category: 'Image Tools', categorySlug: 'image-tools', title: 'Image to Base64', shortTitle: 'Img→Base64',
     description: 'Convert images to Base64 strings for embedding.', longDescription: 'Get base64 strings for embedding images into HTML/CSS.', icon: '🧩', primaryKeyword: 'image to base64 converter', secondaryKeywords: ['image base64','img to base64'], lsiKeywords: [],
-    faqs: makeFaqs('image to base64 converter', 'Image to Base64'), howToSteps: makeHowTo(), relatedTools: ['image-converter','favicon-generator'], isPopular: false, isNew: false,
+    faqs: makeFaqs('image to base64 converter', 'Image to Base64'), howToSteps: makeHowTo(), relatedTools: ['image-converter','favicon-generator'], isPopular: true, isNew: false, isHot: true,
     adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
   },
   { slug: 'image-converter', category: 'Image Tools', categorySlug: 'image-tools', title: 'Image Format Converter', shortTitle: 'Convert Img',
     description: 'Convert between JPG, PNG, WebP and GIF client-side.', longDescription: 'Change image formats safely in the browser with download support.', icon: '🔁', primaryKeyword: 'convert image to JPG PNG WebP', secondaryKeywords: ['image converter','convert image'], lsiKeywords: [],
-    faqs: makeFaqs('convert image to JPG PNG WebP', 'Image Format Converter'), howToSteps: makeHowTo(), relatedTools: ['image-resizer','image-compressor'], isPopular: false, isNew: false,
+    faqs: makeFaqs('convert image to JPG PNG WebP', 'Image Format Converter'), howToSteps: makeHowTo(), relatedTools: ['image-resizer','image-compressor'], isPopular: true, isNew: false, isHot: true,
     adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
   },
   { slug: 'image-cropper', category: 'Image Tools', categorySlug: 'image-tools', title: 'Image Cropper', shortTitle: 'Crop',
     description: 'Crop images with freeform or preset aspect ratios.', longDescription: 'Canvas-based cropping with preset ratios and export options.', icon: '✂️', primaryKeyword: 'crop image online free', secondaryKeywords: ['image cropper'], lsiKeywords: [],
-    faqs: makeFaqs('crop image online free', 'Image Cropper'), howToSteps: makeHowTo(), relatedTools: ['image-resizer','favicon-generator'], isPopular: false, isNew: false,
+    faqs: makeFaqs('crop image online free', 'Image Cropper'), howToSteps: makeHowTo(), relatedTools: ['image-resizer','favicon-generator'], isPopular: true, isNew: false, isHot: true,
     adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
   },
   { slug: 'image-metadata', category: 'Image Tools', categorySlug: 'image-tools', title: 'Image Metadata Viewer', shortTitle: 'EXIF',
     description: 'View EXIF and image metadata client-side.', longDescription: 'Upload images to inspect EXIF fields, camera, GPS and more locally.', icon: '🧾', primaryKeyword: 'EXIF data viewer online', secondaryKeywords: ['exif viewer','image metadata'], lsiKeywords: [],
-    faqs: makeFaqs('EXIF data viewer online', 'Image Metadata Viewer'), howToSteps: makeHowTo(), relatedTools: ['image-compressor','image-converter'], isPopular: false, isNew: false,
+    faqs: makeFaqs('EXIF data viewer online', 'Image Metadata Viewer'), howToSteps: makeHowTo(), relatedTools: ['image-compressor','image-converter'], isPopular: true, isNew: false, isHot: true,
     adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
   },
 
@@ -250,39 +273,39 @@ export const tools: Tool[] = [
   },
   { slug: 'password-generator', category: 'Security Tools', categorySlug: 'security-tools', title: 'Password Generator', shortTitle: 'Password',
     description: 'Generate secure passwords with configurable options.', longDescription: 'Control length, charset and exclude ambiguous characters with strength meter.', icon: '🔑', primaryKeyword: 'random password generator', secondaryKeywords: ['password generator','secure password'], lsiKeywords: [],
-    faqs: makeFaqs('random password generator', 'Password Generator'), howToSteps: makeHowTo(), relatedTools: ['password-strength','uuid-generator'], isPopular: false, isNew: false,
+    faqs: makeFaqs('random password generator', 'Password Generator'), howToSteps: makeHowTo(), relatedTools: ['password-strength','uuid-generator'], isPopular: true, isNew: false, isHot: true,
     adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
   },
 
   // Design Tools
   { slug: 'color-palette', category: 'Design Tools', categorySlug: 'design-tools', title: 'Color Palette Generator', shortTitle: 'Palette',
     description: 'Generate and export color palettes with lockable colors.', longDescription: 'Random palette generation, lock colors and export HEX/CSS variables for design use.', icon: '🎨', primaryKeyword: 'color palette generator online', secondaryKeywords: ['color palette generator'], lsiKeywords: [],
-    faqs: makeFaqs('color palette generator online', 'Color Palette Generator'), howToSteps: makeHowTo(), relatedTools: ['gradient-builder','favicon-generator'], isPopular: false, isNew: false,
+    faqs: makeFaqs('color palette generator online', 'Color Palette Generator'), howToSteps: makeHowTo(), relatedTools: ['gradient-builder','favicon-generator'], isPopular: true, isNew: false,
     adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
   },
   { slug: 'gradient-builder', category: 'Design Tools', categorySlug: 'design-tools', title: 'CSS Gradient Builder', shortTitle: 'Gradient',
     description: 'Create linear and radial CSS gradients with multiple stops.', longDescription: 'Visual gradient editor with copyable CSS output.', icon: '🌈', primaryKeyword: 'CSS gradient generator online', secondaryKeywords: ['gradient generator','css gradient builder'], lsiKeywords: [],
-    faqs: makeFaqs('CSS gradient generator online', 'CSS Gradient Builder'), howToSteps: makeHowTo(), relatedTools: ['color-palette','css-button-generator'], isPopular: false, isNew: false,
+    faqs: makeFaqs('CSS gradient generator online', 'CSS Gradient Builder'), howToSteps: makeHowTo(), relatedTools: ['color-palette','css-button-generator'], isPopular: true, isNew: false,
     adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
   },
   { slug: 'box-shadow-builder', category: 'Design Tools', categorySlug: 'design-tools', title: 'Box Shadow Builder', shortTitle: 'Box Shadow',
     description: 'Visually build CSS box-shadows with multiple layers.', longDescription: 'Sliders for blur, spread, color and inset with CSS output.', icon: '🧱', primaryKeyword: 'box shadow generator CSS', secondaryKeywords: ['box shadow generator'], lsiKeywords: [],
-    faqs: makeFaqs('box shadow generator CSS', 'Box Shadow Builder'), howToSteps: makeHowTo(), relatedTools: ['border-radius-builder','css-button-generator'], isPopular: false, isNew: false,
+    faqs: makeFaqs('box shadow generator CSS', 'Box Shadow Builder'), howToSteps: makeHowTo(), relatedTools: ['border-radius-builder','css-button-generator'], isPopular: true, isNew: false,
     adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
   },
   { slug: 'border-radius-builder', category: 'Design Tools', categorySlug: 'design-tools', title: 'Border Radius Builder', shortTitle: 'Border Radius',
     description: 'Control 8-point border radii and export CSS.', longDescription: 'Visual control for border radii and copyable code.', icon: '🔲', primaryKeyword: 'border radius generator', secondaryKeywords: ['border radius generator'], lsiKeywords: [],
-    faqs: makeFaqs('border radius generator', 'Border Radius Builder'), howToSteps: makeHowTo(), relatedTools: ['box-shadow-builder','css-button-generator'], isPopular: false, isNew: false,
+    faqs: makeFaqs('border radius generator', 'Border Radius Builder'), howToSteps: makeHowTo(), relatedTools: ['box-shadow-builder','css-button-generator'], isPopular: true, isNew: false,
     adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
   },
   { slug: 'css-button-generator', category: 'Design Tools', categorySlug: 'design-tools', title: 'CSS Button Generator', shortTitle: 'Button Gen',
     description: 'Style every button property and copy CSS+HTML.', longDescription: 'Generate accessible CSS button styles and copy HTML snippets.', icon: '🔘', primaryKeyword: 'CSS button generator online', secondaryKeywords: ['css button generator'], lsiKeywords: [],
-    faqs: makeFaqs('CSS button generator online', 'CSS Button Generator'), howToSteps: makeHowTo(), relatedTools: ['box-shadow-builder','border-radius-builder'], isPopular: false, isNew: false,
+    faqs: makeFaqs('CSS button generator online', 'CSS Button Generator'), howToSteps: makeHowTo(), relatedTools: ['box-shadow-builder','border-radius-builder'], isPopular: true, isNew: false,
     adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
   },
   { slug: 'favicon-generator', category: 'Design Tools', categorySlug: 'design-tools', title: 'Favicon Generator', shortTitle: 'Favicon',
     description: 'Create ICO/PNG favicons from images or text.', longDescription: 'Generate favicon assets and HTML link tags for multiple sizes.', icon: '🔖', primaryKeyword: 'favicon generator online free', secondaryKeywords: ['favicon generator'], lsiKeywords: [],
-    faqs: makeFaqs('favicon generator online free', 'Favicon Generator'), howToSteps: makeHowTo(), relatedTools: ['image-resizer','image-converter'], isPopular: false, isNew: false,
+    faqs: makeFaqs('favicon generator online free', 'Favicon Generator'), howToSteps: makeHowTo(), relatedTools: ['image-resizer','image-converter'], isPopular: true, isNew: false,
     adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
   },
 
@@ -358,17 +381,17 @@ export const tools: Tool[] = [
   // Security & Privacy (some overlap with Text Tools list)
   { slug: 'password-strength', category: 'Security Tools', categorySlug: 'security-tools', title: 'Password Strength Checker', shortTitle: 'Pwd Strength',
     description: 'Real-time scoring, entropy and crack-time estimates.', longDescription: 'Evaluate password strength and receive improvement suggestions.', icon: '🔒', primaryKeyword: 'password strength checker online', secondaryKeywords: ['password strength checker'], lsiKeywords: [],
-    faqs: makeFaqs('password strength checker online', 'Password Strength Checker'), howToSteps: makeHowTo(), relatedTools: ['password-generator','hash-generator'], isPopular: false, isNew: false,
+    faqs: makeFaqs('password strength checker online', 'Password Strength Checker'), howToSteps: makeHowTo(), relatedTools: ['password-generator','hash-generator'], isPopular: true, isNew: false, isHot: true,
     adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
   },
   { slug: 'hash-generator', category: 'Security Tools', categorySlug: 'security-tools', title: 'Hash Generator', shortTitle: 'Hash',
     description: 'Generate MD5, SHA1, SHA256 and SHA512 hashes from text.', longDescription: 'Client-side hashing tools for quick checks and testing.', icon: '🔐', primaryKeyword: 'MD5 SHA256 hash generator online', secondaryKeywords: ['hash generator','md5 sha256'], lsiKeywords: [],
-    faqs: makeFaqs('MD5 SHA256 hash generator online', 'Hash Generator'), howToSteps: makeHowTo(), relatedTools: ['uuid-generator','password-strength'], isPopular: false, isNew: false,
+    faqs: makeFaqs('MD5 SHA256 hash generator online', 'Hash Generator'), howToSteps: makeHowTo(), relatedTools: ['uuid-generator','password-strength'], isPopular: true, isNew: false, isHot: true,
     adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
   },
   { slug: 'uuid-generator', category: 'Security Tools', categorySlug: 'security-tools', title: 'UUID Generator', shortTitle: 'UUID',
     description: 'Generate UUID v1/v4 and bulk generate identifiers.', longDescription: 'Create UUIDs client-side with copy and bulk export.', icon: '🔁', primaryKeyword: 'UUID generator online', secondaryKeywords: ['uuid generator'], lsiKeywords: [],
-    faqs: makeFaqs('UUID generator online', 'UUID Generator'), howToSteps: makeHowTo(), relatedTools: ['hash-generator','password-generator'], isPopular: false, isNew: false,
+    faqs: makeFaqs('UUID generator online', 'UUID Generator'), howToSteps: makeHowTo(), relatedTools: ['hash-generator','password-generator'], isPopular: true, isNew: false, isHot: true,
     adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
   },
 
@@ -376,5 +399,52 @@ export const tools: Tool[] = [
   { slug: 'calorie-calculator', category: 'Calculators', categorySlug: 'calculators', title: 'Calorie Calculator', shortTitle: 'Calories',
     description: 'Estimate daily calorie targets for goals.', longDescription: 'Calorie estimation with goal adjustments and timelines.', icon: '🍎', primaryKeyword: 'calorie calculator online', secondaryKeywords: ['calorie calculator'], lsiKeywords: [],
     faqs: makeFaqs('calorie calculator online', 'Calorie Calculator'), howToSteps: makeHowTo(), relatedTools: ['tdee-calculator','bmi-calculator'], isPopular: false, isNew: false, adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
+  },
+
+  // PDF Tools
+  { slug: 'pdf-merger', category: 'PDF Tools', categorySlug: 'pdf-tools', title: 'Merge PDF', shortTitle: 'Merge PDF',
+    description: 'Combine multiple PDF files into a single document instantly.', longDescription: 'Upload and merge two or more PDFs into one file — all in your browser, no uploads to any server.', icon: '📄', primaryKeyword: 'merge PDF files online free', secondaryKeywords: ['pdf merger','combine pdf','merge pdf'], lsiKeywords: [],
+    faqs: makeFaqs('merge PDF files online free', 'Merge PDF'), howToSteps: makeHowTo(), relatedTools: ['pdf-splitter','pdf-compressor'], isPopular: true, isNew: false, isHot: true,
+    adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
+  },
+  { slug: 'pdf-splitter', category: 'PDF Tools', categorySlug: 'pdf-tools', title: 'Split PDF', shortTitle: 'Split PDF',
+    description: 'Split a PDF into separate pages or extract specific pages.', longDescription: 'Upload a PDF and choose which pages to extract — each becomes its own PDF file, processed entirely client-side.', icon: '✂️', primaryKeyword: 'split PDF online free', secondaryKeywords: ['pdf splitter','extract pdf pages','separate pdf'], lsiKeywords: [],
+    faqs: makeFaqs('split PDF online free', 'Split PDF'), howToSteps: makeHowTo(), relatedTools: ['pdf-merger','pdf-compressor'], isPopular: true, isNew: false, isHot: true,
+    adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
+  },
+  { slug: 'pdf-compressor', category: 'PDF Tools', categorySlug: 'pdf-tools', title: 'Compress PDF', shortTitle: 'Compress PDF',
+    description: 'Reduce PDF file size with adjustable compression levels.', longDescription: 'Compress your PDF files to reduce size while maintaining quality — choose from low, medium, or high compression.', icon: '🗜️', primaryKeyword: 'compress PDF online free', secondaryKeywords: ['pdf compressor','reduce pdf size'], lsiKeywords: [],
+    faqs: makeFaqs('compress PDF online free', 'Compress PDF'), howToSteps: makeHowTo(), relatedTools: ['pdf-merger','pdf-splitter'], isPopular: true, isNew: false, isHot: true,
+    adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
+  },
+  { slug: 'pdf-to-excel', category: 'PDF Tools', categorySlug: 'pdf-tools', title: 'PDF to Excel Converter', shortTitle: 'PDF→Excel',
+    description: 'Extract tabular data from PDFs into Excel spreadsheets.', longDescription: 'Convert PDF content into a downloadable XLSX file. Perfect for extracting data from PDF tables and reports client-side.', icon: '📊', primaryKeyword: 'PDF to Excel converter online free', secondaryKeywords: ['pdf to excel','convert pdf to excel','pdf to xlsx'], lsiKeywords: [],
+    faqs: makeFaqs('PDF to Excel converter online free', 'PDF to Excel Converter'), howToSteps: makeHowTo(), relatedTools: ['excel-to-pdf','pdf-to-word'], isPopular: true, isNew: false, isHot: true,
+    adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
+  },
+  { slug: 'excel-to-pdf', category: 'PDF Tools', categorySlug: 'pdf-tools', title: 'Excel to PDF Converter', shortTitle: 'Excel→PDF',
+    description: 'Convert Excel spreadsheets into PDF documents.', longDescription: 'Upload any XLSX file and convert it into a clean, printable PDF table — all within your browser.', icon: '📑', primaryKeyword: 'Excel to PDF converter online free', secondaryKeywords: ['excel to pdf','convert xlsx to pdf','xlsx to pdf'], lsiKeywords: [],
+    faqs: makeFaqs('Excel to PDF converter online free', 'Excel to PDF Converter'), howToSteps: makeHowTo(), relatedTools: ['pdf-to-excel','pdf-to-word'], isPopular: true, isNew: false, isHot: true,
+    adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
+  },
+  { slug: 'pdf-to-word', category: 'PDF Tools', categorySlug: 'pdf-tools', title: 'PDF to Word Converter', shortTitle: 'PDF→Word',
+    description: 'Convert PDF content into an editable Word document.', longDescription: 'Extract text from PDF files and download as a formatted Word document — all processing stays on your device.', icon: '📝', primaryKeyword: 'PDF to Word converter online free', secondaryKeywords: ['pdf to word','convert pdf to docx','pdf to doc'], lsiKeywords: [],
+    faqs: makeFaqs('PDF to Word converter online free', 'PDF to Word Converter'), howToSteps: makeHowTo(), relatedTools: ['word-to-pdf','pdf-to-excel'], isPopular: true, isNew: false, isHot: true,
+    adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
+  },
+  { slug: 'word-to-pdf', category: 'PDF Tools', categorySlug: 'pdf-tools', title: 'Word to PDF Converter', shortTitle: 'Word→PDF',
+    description: 'Convert Word documents or plain text into PDF files.', longDescription: 'Upload a DOCX file or paste text to generate a clean PDF document — fully client-side.', icon: '📃', primaryKeyword: 'Word to PDF converter online free', secondaryKeywords: ['word to pdf','convert docx to pdf','doc to pdf'], lsiKeywords: [],
+    faqs: makeFaqs('Word to PDF converter online free', 'Word to PDF Converter'), howToSteps: makeHowTo(), relatedTools: ['pdf-to-word','excel-to-pdf'], isPopular: true, isNew: false, isHot: true,
+    adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
+  },
+  { slug: 'pdf-to-powerpoint', category: 'PDF Tools', categorySlug: 'pdf-tools', title: 'PDF to PowerPoint Converter', shortTitle: 'PDF→PPT',
+    description: 'Convert PDF pages into a PowerPoint presentation.', longDescription: 'Turn each PDF page into a PowerPoint slide with one click — fully private, no file uploads to any server.', icon: '📽️', primaryKeyword: 'PDF to PowerPoint converter online free', secondaryKeywords: ['pdf to powerpoint','convert pdf to ppt','pdf to pptx'], lsiKeywords: [],
+    faqs: makeFaqs('PDF to PowerPoint converter online free', 'PDF to PowerPoint Converter'), howToSteps: makeHowTo(), relatedTools: ['powerpoint-to-pdf','pdf-to-word'], isPopular: true, isNew: false, isHot: true,
+    adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
+  },
+  { slug: 'powerpoint-to-pdf', category: 'PDF Tools', categorySlug: 'pdf-tools', title: 'PowerPoint to PDF Converter', shortTitle: 'PPT→PDF',
+    description: 'Convert PowerPoint slides or images into PDF files.', longDescription: 'Upload PPTX files or slide images to create a combined PDF — processed entirely in your browser.', icon: '🖼️', primaryKeyword: 'PowerPoint to PDF converter online free', secondaryKeywords: ['powerpoint to pdf','convert pptx to pdf','ppt to pdf'], lsiKeywords: [],
+    faqs: makeFaqs('PowerPoint to PDF converter online free', 'PowerPoint to PDF Converter'), howToSteps: makeHowTo(), relatedTools: ['pdf-to-powerpoint','word-to-pdf'], isPopular: true, isNew: false, isHot: true,
+    adSlots: { top: true, sidebar: true, belowTool: true, inContent: true }
   }
 ]

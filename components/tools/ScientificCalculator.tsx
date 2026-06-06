@@ -30,7 +30,7 @@ export default function ScientificCalculator() {
     <div>
       <input value={expression} onChange={(e) => setExpression(e.target.value)} className="w-full p-2 border rounded font-mono" />
       <div className="mt-3 flex gap-2">
-        <button onClick={calculate} className="px-4 py-2 bg-[var(--brand-primary)] text-white rounded">Calculate</button>
+        <button onClick={calculate} className="px-4 py-2 bg-[var(--brand-primary)] text-black rounded">Calculate</button>
       </div>
       {error && <div className="mt-3 text-red-500 text-sm">{error}</div>}
       <div className="mt-4 p-4 border rounded">

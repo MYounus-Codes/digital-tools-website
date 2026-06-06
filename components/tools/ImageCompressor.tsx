@@ -51,7 +51,7 @@ export default function ImageCompressor() {
       </div>
 
       <div className="flex flex-wrap gap-3">
-        <button onClick={compress} disabled={!file || processing} className="rounded-full bg-[var(--brand-primary)] px-5 py-3 text-sm font-extrabold uppercase tracking-[0.22em] text-white shadow-[0_16px_34px_rgba(37,99,235,0.24)]">{processing ? 'Processing...' : 'Compress'}</button>
+        <button onClick={compress} disabled={!file || processing} className="rounded-full bg-[var(--brand-primary)] px-5 py-3 text-sm font-extrabold uppercase tracking-[0.22em] text-black shadow-[0_16px_34px_rgba(37,99,235,0.24)]">{processing ? 'Processing...' : 'Compress'}</button>
         {outputUrl && <a href={outputUrl} download="compressed.jpg" className="rounded-full px-5 py-3 text-sm font-extrabold uppercase tracking-[0.22em] text-[var(--text-primary)]">Download</a>}
       </div>
     </div>

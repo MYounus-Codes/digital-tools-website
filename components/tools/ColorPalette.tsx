@@ -24,7 +24,7 @@ export default function ColorPalette() {
         ))}
       </div>
       <div className="mt-4 flex gap-2">
-        <button onClick={generate} className="px-4 py-2 bg-[var(--brand-primary)] text-white rounded">Generate</button>
+        <button onClick={generate} className="px-4 py-2 bg-[var(--brand-primary)] text-black rounded">Generate</button>
         <button onClick={exportCss} className="px-4 py-2 border rounded">Copy CSS Vars</button>
       </div>
     </div>

@@ -58,7 +58,7 @@ export default function JsonToCsv() {
     <div className="space-y-4">
       <textarea value={input} onChange={(e) => setInput(e.target.value)} placeholder='Paste JSON array here' className="tool-card h-40 w-full p-4 text-sm font-medium" />
       <div className="flex flex-wrap gap-3">
-        <button onClick={convert} className="rounded-full bg-[var(--brand-primary)] px-5 py-3 text-sm font-extrabold uppercase tracking-[0.22em] text-white">Convert</button>
+        <button onClick={convert} className="rounded-full bg-[var(--brand-primary)] px-5 py-3 text-sm font-extrabold uppercase tracking-[0.22em] text-black">Convert</button>
         <button onClick={() => { setInput('') ; setCsv(''); setError(null) }} className="rounded-full px-5 py-3 text-sm font-extrabold uppercase tracking-[0.22em] text-[var(--text-primary)]">Clear</button>
         {csv && <button onClick={download} className="rounded-full px-5 py-3 text-sm font-extrabold uppercase tracking-[0.22em] text-[var(--text-primary)]">Download CSV</button>}
       </div>

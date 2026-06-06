@@ -22,30 +22,17 @@ export default function ContactPage() {
     setStatus('sending')
     setErrorMessage('')
 
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY
-    if (!accessKey) {
-      setStatus('error')
-      setErrorMessage('Form service is not configured. Please set NEXT_PUBLIC_WEB3FORMS_KEY in .env.local.')
-      return
-    }
-
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          access_key: accessKey,
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject || 'General inquiry',
-          message: formData.message,
-        }),
+        body: JSON.stringify(formData),
       })
 
       const data = await res.json()
 
-      if (!data.success) {
-        throw new Error(data.message || 'Something went wrong.')
+      if (!res.ok) {
+        throw new Error(data.error || 'Something went wrong.')
       }
 
       setStatus('success')

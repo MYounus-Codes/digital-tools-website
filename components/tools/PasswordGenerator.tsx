@@ -52,7 +52,7 @@ export default function PasswordGenerator() {
         <label><input type="checkbox" checked={useSym} onChange={(e) => setUseSym(e.target.checked)} /> symbols</label>
       </div>
       <div className="flex flex-wrap gap-3">
-        <button onClick={generate} className="rounded-full bg-[var(--brand-primary)] px-5 py-3 text-sm font-extrabold uppercase tracking-[0.22em] text-white">Generate</button>
+        <button onClick={generate} className="rounded-full bg-[var(--brand-primary)] px-5 py-3 text-sm font-extrabold uppercase tracking-[0.22em] text-black">Generate</button>
         <button onClick={copy} className="rounded-full px-5 py-3 text-sm font-extrabold uppercase tracking-[0.22em] text-[var(--text-primary)]">Copy</button>
       </div>
       <div className="tool-card p-4 font-mono text-sm font-semibold text-[var(--text-primary)]">{pwd || 'Your password will appear here'}</div>

@@ -28,7 +28,7 @@ export default function ImageConverter() {
           <option value="image/jpeg">JPEG</option>
           <option value="image/webp">WebP</option>
         </select>
-        <button onClick={convert} className="px-4 py-2 bg-[var(--brand-primary)] text-white rounded">Convert</button>
+        <button onClick={convert} className="px-4 py-2 bg-[var(--brand-primary)] text-black rounded">Convert</button>
       </div>
       {output && <img src={output} alt="converted" className="mt-4 max-w-full border rounded" />}
     </div>

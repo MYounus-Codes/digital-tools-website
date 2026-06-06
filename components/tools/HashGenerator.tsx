@@ -31,7 +31,7 @@ export default function HashGenerator() {
         className="w-full h-32 p-2 border rounded"
       />
       <div className="mt-3 flex gap-2">
-        <button onClick={generate} disabled={!canCompute} className="px-4 py-2 bg-[var(--brand-primary)] text-white rounded disabled:opacity-50">Generate hashes</button>
+        <button onClick={generate} disabled={!canCompute} className="px-4 py-2 bg-[var(--brand-primary)] text-black rounded disabled:opacity-50">Generate hashes</button>
       </div>
       <div className="mt-4 space-y-3 text-sm">
         <div><div className="font-semibold">SHA-1</div><code className="break-all">{sha1}</code></div>

@@ -29,7 +29,7 @@ export default function JsonFormatter() {
     <div>
       <textarea value={text} onChange={(e) => setText(e.target.value)} className="w-full h-48 p-2 border rounded" placeholder='Paste JSON here' />
       <div className="flex gap-2 mt-2">
-        <button onClick={beautify} className="px-4 py-2 bg-[var(--brand-primary)] text-white rounded">Beautify</button>
+        <button onClick={beautify} className="px-4 py-2 bg-[var(--brand-primary)] text-black rounded">Beautify</button>
         <button onClick={minify} className="px-4 py-2 border rounded">Minify</button>
         <button onClick={() => { setText(''); setError(null) }} className="px-4 py-2 border rounded">Clear</button>
       </div>

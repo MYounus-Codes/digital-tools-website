@@ -60,6 +60,56 @@ export const homeFaqs: FaqItem[] = [
 export const faqItems: FaqItem[] = [
   ...homeFaqs,
   {
+    question: 'How do I remove the background from an image for free?',
+    answer: 'Upload your image to our Background Remover tool and click "Remove Background". The AI processes it instantly in your browser — no signup, no cost, and your image never leaves your device.',
+    category: 'Image Tools'
+  },
+  {
+    question: 'Is the AI background remover really free to use?',
+    answer: 'Yes, it is 100% free with no hidden charges, no credit card required, and no usage limits. You can remove backgrounds from as many images as you like.',
+    category: 'Image Tools'
+  },
+  {
+    question: 'What image formats are supported for background removal?',
+    answer: 'The tool accepts all common image formats including JPG, JPEG, PNG, WebP, GIF, and BMP. The output is a PNG image with a transparent background.',
+    category: 'Image Tools'
+  },
+  {
+    question: 'Are my images uploaded to any server when I remove the background?',
+    answer: 'No. The entire background removal process runs locally in your browser. Your images are never uploaded, stored, or processed on any external server — your privacy is guaranteed.',
+    category: 'Image Tools'
+  },
+  {
+    question: 'How accurate is the AI background removal?',
+    answer: 'The AI is highly accurate for most subjects including people, products, animals, and objects. It can handle complex edges like hair, fur, and intricate shapes with impressive precision.',
+    category: 'Image Tools'
+  },
+  {
+    question: 'Can I remove the background from a photo with a white background?',
+    answer: 'Yes, the AI works on any background color or pattern, including solid white, gradient backgrounds, outdoor scenes, or busy indoor settings.',
+    category: 'Image Tools'
+  },
+  {
+    question: 'Does the background remover work on mobile phones?',
+    answer: 'Yes, the tool is fully responsive and works on all mobile devices, tablets, and desktops. You can upload images directly from your phone\'s camera roll.',
+    category: 'Image Tools'
+  },
+  {
+    question: 'What can I use the transparent background image for?',
+    answer: 'Transparent PNG images are perfect for e-commerce product photos, profile pictures, logo design, graphic design projects, social media content, and presentations.',
+    category: 'Image Tools'
+  },
+  {
+    question: 'How is this background remover different from Photoshop?',
+    answer: 'Unlike Photoshop which requires design skills and manual selection tools, our AI background remover does the job in one click — no learning curve, no installation, and completely free.',
+    category: 'Image Tools'
+  },
+  {
+    question: 'Can I download the background-removed image in high resolution?',
+    answer: 'Yes, the output preserves the original image resolution and quality. You download a full-resolution PNG with the background removed.',
+    category: 'Image Tools'
+  },
+  {
     question: 'What kind of tools are included on ToolNest?',
     answer: 'The site includes calculators, SEO helpers, text utilities, image tools, developer utilities, and everyday productivity tools.',
     category: 'Tools'

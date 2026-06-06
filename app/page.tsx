@@ -5,13 +5,18 @@ import { featuredBlog, blogPosts } from '../lib/blogs'
 export default function HomePage() {
   const categoryEntries = Array.from(
     tools.reduce((map, tool) => {
-      const current = map.get(tool.categorySlug) || { slug: tool.categorySlug, name: tool.category, count: 0, icon: tool.icon }
-      map.set(tool.categorySlug, { ...current, count: current.count + 1 })
+      const current = map.get(tool.categorySlug) || { slug: tool.categorySlug, name: tool.category, count: 0, icon: tool.icon, hasHot: false, hasPopular: false }
+      map.set(tool.categorySlug, {
+        ...current,
+        count: current.count + 1,
+        hasHot: current.hasHot || !!tool.isHot,
+        hasPopular: current.hasPopular || !!tool.isPopular,
+      })
       return map
-    }, new Map<string, { slug: string; name: string; count: number; icon: string }>()).values()
+    }, new Map<string, { slug: string; name: string; count: number; icon: string; hasHot: boolean; hasPopular: boolean }>()).values()
   )
 
-  const featuredTools = tools.filter((tool) => tool.isPopular).slice(0, 6)
+  const featuredTools = tools.filter((tool) => tool.isPopular).slice(0, 9)
   const stats = [
     { label: 'Tools live', value: `${tools.length}+` },
     { label: 'Categories', value: `${new Set(tools.map((tool) => tool.categorySlug)).size}` },
@@ -90,6 +95,79 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="overflow-hidden rounded-[2rem] border border-[var(--border)] bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 px-6 py-8 md:px-10 md:py-12">
+        <div className="relative z-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div className="space-y-5">
+            <div className="inline-flex animate-bounce items-center gap-2 rounded-full bg-white/20 px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.28em] text-white shadow-[0_8px_24px_rgba(0,0,0,0.12)] backdrop-blur-sm">
+              <span className="flex h-2.5 w-2.5 animate-pulse rounded-full bg-green-300" />
+              Just launched
+            </div>
+            <h2 className="font-display text-[clamp(2.2rem,6vw,4.2rem)] leading-[0.95] text-white drop-shadow-sm">
+              AI Background Remover
+            </h2>
+            <p className="max-w-xl text-sm leading-7 text-white sm:text-base sm:leading-8">
+              Remove image backgrounds instantly with AI — no signup, no upload to our servers, completely free.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/image-tools/background-remover"
+                className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-xs font-extrabold uppercase tracking-[0.22em] text-indigo-600 shadow-[0_14px_34px_rgba(0,0,0,0.18)] transition-transform hover:scale-105 sm:text-sm"
+              >
+                Try it now
+              </Link>
+              <span className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-3 text-[11px] font-extrabold uppercase tracking-[0.24em] text-white backdrop-blur-sm">
+                Free / No signup
+              </span>
+            </div>
+          </div>
+
+          <div className="relative flex items-center justify-center">
+            <div className="relative flex w-full max-w-sm gap-3">
+              <div className="group relative flex-1 overflow-hidden rounded-2xl border-2 border-white/30 bg-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.20)] backdrop-blur-sm transition-all hover:scale-[1.02]">
+                <div className="absolute left-0 top-0 z-10 rounded-br-xl bg-white/20 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.2em] text-white backdrop-blur-sm">Before</div>
+                <svg viewBox="0 0 300 300" className="h-full w-full">
+                  <rect width="300" height="300" fill="#e5e7eb" />
+                  <circle cx="150" cy="150" r="80" fill="#ff6b6b" />
+                  <circle cx="130" cy="130" r="20" fill="#ffd93d" />
+                  <circle cx="170" cy="130" r="18" fill="#ffd93d" />
+                  <ellipse cx="150" cy="175" rx="30" ry="12" fill="#ff8a5c" />
+                  <circle cx="120" cy="110" r="8" fill="#ffd93d" />
+                  <circle cx="180" cy="110" r="7" fill="#ffd93d" />
+                </svg>
+              </div>
+              <div className="flex items-center">
+                <svg className="h-6 w-6 shrink-0 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+              <div className="group relative flex-1 overflow-hidden rounded-2xl border-2 border-white/30 bg-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.20)] backdrop-blur-sm transition-all hover:scale-[1.02]">
+                <div className="absolute left-0 top-0 z-10 rounded-br-xl bg-emerald-400/30 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.2em] text-white backdrop-blur-sm">After</div>
+                <svg viewBox="0 0 300 300" className="h-full w-full">
+                  <defs>
+                    <pattern id="checkers" width="20" height="20" patternUnits="userSpaceOnUse">
+                      <rect width="20" height="20" fill="#fff" />
+                      <rect width="10" height="10" fill="#d1d5db" />
+                      <rect x="10" y="10" width="10" height="10" fill="#d1d5db" />
+                    </pattern>
+                  </defs>
+                  <rect width="300" height="300" fill="url(#checkers)" />
+                  <circle cx="150" cy="150" r="80" fill="#ff6b6b" />
+                  <circle cx="130" cy="130" r="20" fill="#ffd93d" />
+                  <circle cx="170" cy="130" r="18" fill="#ffd93d" />
+                  <ellipse cx="150" cy="175" rx="30" ry="12" fill="#ff8a5c" />
+                  <circle cx="120" cy="110" r="8" fill="#ffd93d" />
+                  <circle cx="180" cy="110" r="7" fill="#ffd93d" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute -left-10 -top-10 h-40 w-40 animate-pulse rounded-full bg-white/5 blur-3xl" />
+          <div className="absolute -bottom-10 -right-10 h-40 w-40 animate-pulse rounded-full bg-white/5 blur-3xl" style={{ animationDelay: '1s' }} />
+        </div>
+      </section>
+
       <section className="space-y-6">
         <div className="flex items-end justify-between gap-4">
           <div>
@@ -107,7 +185,15 @@ export default function HomePage() {
                   <div className="text-3xl">{tool.icon}</div>
                   <h3 className="mt-3 text-xl font-extrabold tracking-tight text-[var(--text-primary)] group-hover:text-[var(--brand-primary)]">{tool.title}</h3>
                 </div>
-                <span className="rounded-full bg-[rgba(217,242,90,0.28)] px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.22em] text-[var(--text-primary)]">Fast</span>
+                <div className="flex gap-2">
+                  {tool.isHot && (
+                    <span className="rounded-full bg-gradient-to-r from-red-500 to-orange-400 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.22em] text-white shadow-[0_4px_12px_rgba(239,68,68,0.35)]">Hot</span>
+                  )}
+                  <span className="rounded-full bg-[rgba(217,242,90,0.28)] px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.22em] text-[var(--text-primary)]">Fast</span>
+                  {(tool.isFree !== false) && (
+                    <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.22em] text-emerald-600">Free</span>
+                  )}
+                </div>
               </div>
               <p className="mt-3 text-sm font-medium leading-7 text-[var(--text-muted)]">{tool.description}</p>
             </Link>
@@ -123,6 +209,15 @@ export default function HomePage() {
               <div>
                 <div className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-[var(--brand-primary)] sm:text-sm sm:tracking-[0.24em]">{category.count} tools</div>
                 <h3 className="mt-2 text-xl font-extrabold tracking-tight text-[var(--text-primary)] sm:text-2xl">{category.name}</h3>
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {category.hasHot && (
+                    <span className="rounded-full bg-gradient-to-r from-red-500 to-orange-400 px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-[0.2em] text-white">Hot</span>
+                  )}
+                  {category.hasPopular && (
+                    <span className="rounded-full bg-[rgba(217,242,90,0.28)] px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-[0.2em] text-[var(--text-primary)]">Popular</span>
+                  )}
+                  <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-[0.2em] text-emerald-600">Free</span>
+                </div>
               </div>
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--bg-muted)] text-2xl sm:h-16 sm:w-16 sm:text-3xl">{category.icon}</div>
             </Link>

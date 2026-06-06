@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic'
 
 const Tdee = dynamic(() => import('../../../components/tools/TdeeCalculator').then(m => m.default), { ssr: false })
 const JsonToCsv = dynamic(() => import('../../../components/tools/JsonToCsv').then(m => m.default), { ssr: false })
+const BackgroundRemover = dynamic(() => import('../../../components/tools/BackgroundRemover').then(m => m.default), { ssr: false })
 const ImageCompressor = dynamic(() => import('../../../components/tools/ImageCompressor').then(m => m.default), { ssr: false })
 const ColorPalette = dynamic(() => import('../../../components/tools/ColorPalette').then(m => m.default), { ssr: false })
 const PasswordGenerator = dynamic(() => import('../../../components/tools/PasswordGenerator').then(m => m.default), { ssr: false })
@@ -60,12 +61,22 @@ const ImageResizer = dynamic(() => import('../../../components/tools/ImageResize
 const ImageConverter = dynamic(() => import('../../../components/tools/ImageConverter').then(m => m.default), { ssr: false })
 const ImageCropper = dynamic(() => import('../../../components/tools/ImageCropper').then(m => m.default), { ssr: false })
 const ImageMetadata = dynamic(() => import('../../../components/tools/ImageMetadata').then(m => m.default), { ssr: false })
+const PdfMerger = dynamic(() => import('../../../components/tools/PdfMerger').then(m => m.default), { ssr: false })
+const PdfSplitter = dynamic(() => import('../../../components/tools/PdfSplitter').then(m => m.default), { ssr: false })
+const PdfCompressor = dynamic(() => import('../../../components/tools/PdfCompressor').then(m => m.default), { ssr: false })
+const PdfToExcel = dynamic(() => import('../../../components/tools/PdfToExcel').then(m => m.default), { ssr: false })
+const ExcelToPdf = dynamic(() => import('../../../components/tools/ExcelToPdf').then(m => m.default), { ssr: false })
+const PdfToWord = dynamic(() => import('../../../components/tools/PdfToWord').then(m => m.default), { ssr: false })
+const WordToPdf = dynamic(() => import('../../../components/tools/WordToPdf').then(m => m.default), { ssr: false })
+const PdfToPowerpoint = dynamic(() => import('../../../components/tools/PdfToPowerpoint').then(m => m.default), { ssr: false })
+const PowerpointToPdf = dynamic(() => import('../../../components/tools/PowerpointToPdf').then(m => m.default), { ssr: false })
 const Placeholder = dynamic(() => import('../../../components/tools/PlaceholderTool').then(m => m.default), { ssr: false })
 
 function selectComponent(slug: string) {
   switch (slug) {
     case 'tdee-calculator': return Tdee
     case 'json-to-csv': return JsonToCsv
+    case 'background-remover': return BackgroundRemover
     case 'image-compressor': return ImageCompressor
     case 'color-palette': return ColorPalette
     case 'password-generator': return PasswordGenerator
@@ -122,6 +133,15 @@ function selectComponent(slug: string) {
     case 'image-converter': return ImageConverter
     case 'image-cropper': return ImageCropper
     case 'image-metadata': return ImageMetadata
+    case 'pdf-merger': return PdfMerger
+    case 'pdf-splitter': return PdfSplitter
+    case 'pdf-compressor': return PdfCompressor
+    case 'pdf-to-excel': return Placeholder
+    case 'excel-to-pdf': return Placeholder
+    case 'pdf-to-word': return Placeholder
+    case 'word-to-pdf': return Placeholder
+    case 'pdf-to-powerpoint': return Placeholder
+    case 'powerpoint-to-pdf': return Placeholder
     default: return Placeholder
   }
 }
@@ -153,6 +173,9 @@ export default function ToolPage({ params }: { params: { category: string, tool:
               <span className="rounded-full border border-[var(--border)] bg-white/80 px-4 py-2">Client-side</span>
               <span className="rounded-full border border-[var(--border)] bg-white/80 px-4 py-2">Private</span>
               <span className="rounded-full border border-[var(--border)] bg-white/80 px-4 py-2">Instant</span>
+              {(item.isFree !== false) && (
+                <span className="rounded-full bg-emerald-500/10 border border-emerald-200 px-4 py-2 text-emerald-600">Free</span>
+              )}
             </div>
           </div>
 
