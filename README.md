@@ -86,4 +86,4 @@ git push -u origin main
 - Blog pages include SEO-friendly headings, metadata, and internal links.
 - Avoid committing secrets or local environment files.
 
-## Thanks!
+## Thanks for reading!
