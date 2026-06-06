@@ -23,16 +23,20 @@ export default function ContactPage() {
     setErrorMessage('')
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+          ...formData,
+          subject: formData.subject || 'General inquiry',
+        }),
       })
 
       const data = await res.json()
 
-      if (!res.ok) {
-        throw new Error(data.error || 'Something went wrong.')
+      if (!data.success) {
+        throw new Error(data.message || 'Something went wrong.')
       }
 
       setStatus('success')
